@@ -1,0 +1,25 @@
+<h1>Blog</h1>
+<div class="container">
+  <!-- Premier article à largeur totale -->
+  <div class="card-big">
+    <div class="card-body-big">
+      <img class="card-image" [src]="this.articles[0].urlToImage" alt="Article Image">
+      <h5 class="card-text-title-big">{{ this.articles[0].title }}</h5>
+      <p class="card-text-description-big">{{ this.articles[0].description }}</p>
+      <p class="card-text-author-big">Author: {{ this.articles[0].author }}</p>
+      <p class="card-text-publishedAt-big">Published At: {{ this.articles[0].publishedAt | date }}</p>
+    </div>
+  </div>
+
+  <!-- Articles suivants en grille de 4 cartes par ligne -->
+  <div *ngFor="let article of this.articles.slice(1)" class="card">
+    <div class="card-body">
+      <img class="card-image" [src]="article.urlToImage" alt="Article Image">
+      <h5 class="card-text-title">{{ article.title }}</h5>
+      <p class="card-text-description">{{ article.description }}</p>
+      <p class="card-text-author">Author: {{ article.author }}</p>
+      <p class="card-text-publishedAt">Published At: {{ article.publishedAt | date }}</p>
+    </div>
+  </div>
+</div>
+

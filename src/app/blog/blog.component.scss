@@ -1,0 +1,100 @@
+h1{
+  text-align: center;
+  background: -webkit-linear-gradient(60deg,#fe9d8f,#f26457);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px;
+  font-family: IBM Plex Sans,sans-serif;
+
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  color: #ededed;
+  text-align: justify;
+
+}
+
+.card-big {
+  width: 80%;
+  margin: 10px;
+  padding: 10px;
+  //border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.card-body-big {
+  display: flex;
+  flex-direction: column;
+}
+.card-image{
+  border-radius: 15px;
+
+}
+.card-text-title-big {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.card-text-description-big {
+  margin-bottom: 5px;
+  font-family: Roboto,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7rem;
+}
+
+.card-text-author-big {
+  margin-bottom: 5px;
+  font-family: Roboto,sans-serif;
+  font-size: 14px;
+}
+
+.card-text-publishedAt-big {
+  margin-bottom: 5px;
+  font-family: Roboto,sans-serif;
+  font-size: 14px;
+}
+
+.card {
+  width: calc(25% - 20px);
+  margin: 10px;
+  padding: 10px;
+  //border: 1px solid #ccc;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text-description {
+  margin-bottom: 5px;
+  font-family: Roboto,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7rem;
+}
+
+.card-text-author {
+  margin-bottom: 5px;
+  font-family: Roboto,sans-serif;
+  font-size: 14px;
+}
+
+.card-text-publishedAt {
+  margin-bottom: 5px;
+  font-family: Roboto,sans-serif;
+  font-size: 14px;
+}

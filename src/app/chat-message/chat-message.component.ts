@@ -22,8 +22,9 @@ export class ChatMessageComponent implements OnInit {
 
     // Souscrire aux messages en direct
     this.chatService.getMessages().subscribe((message: any) => {
-      this.messages.push(message);
+      this.messages.push(JSON.stringify(message)); // Convertir l'objet en une chaîne JSON
     });
+
   }
 
   sendMessage() {
@@ -31,7 +32,8 @@ export class ChatMessageComponent implements OnInit {
       return;
     }
 
-    const message = this.messageForm.value.message;
+    const message = this.messageForm.getRawValue();
+    console.log(message)
     this.chatService.sendMessage(message);
     this.messageForm.reset();
   }

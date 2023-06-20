@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.chat-container {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 300px; /* ajustez la hauteur selon vos besoins */
+  overflow-y: auto; /* ajoutez une barre de défilement si nécessaire */
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+/*# sourceMappingURL=chat-message.component.css.map */

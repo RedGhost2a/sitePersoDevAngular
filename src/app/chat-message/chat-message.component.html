@@ -1,0 +1,21 @@
+<h2>Chat Messages</h2>
+
+<div class="chat-container">
+  <div *ngFor="let message of messages" class="message">{{ message }}</div>
+</div>
+
+<form [formGroup]="messageForm" (submit)="sendMessage()">
+  <div>
+    <label for="sender">Sender:</label>
+    <input type="text" id="sender" formControlName="sender" required>
+  </div>
+  <div>
+    <label for="recipient">Recipient:</label>
+    <input type="text" id="recipient" formControlName="recipient" required>
+  </div>
+  <div>
+    <label for="message">Message:</label>
+    <input type="text" id="message" formControlName="message" required>
+  </div>
+  <button type="submit">Send</button>
+</form>

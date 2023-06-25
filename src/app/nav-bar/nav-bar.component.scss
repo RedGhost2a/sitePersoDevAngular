@@ -1,0 +1,43 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  max-height: 65px;
+  z-index: 100;
+  font-family: Roboto,sans-serif;
+  font-size: 20px;
+
+
+  .navbar-brand {
+    .navbar-logo {
+      height: 50px;
+    }
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 1rem;
+
+    .navbar-link {
+      color: white;
+      text-decoration: none;
+
+      &:visited {
+        color: white;
+      }
+
+      &:hover, &:focus {
+        text-decoration: underline;
+        text-decoration-color: pink;
+        text-decoration-thickness: 5px;
+      }
+    }
+  }
+}

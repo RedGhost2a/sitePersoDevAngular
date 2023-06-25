@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a href="#">
+      <img src="favicon.ico" alt="Logo" class="navbar-logo">
+    </a>
+  </div>
+  <div class="navbar-links">
+    <a [routerLink]="'/chatMessage'" class="navbar-link">Tchat!</a>
+    <a [routerLink]="'/blog'" class="navbar-link">Blog</a>
+    <a [routerLink]="'/contact'" class="navbar-link">Contact</a>
+    <a [routerLink]="'/login'" *ngIf="!usersService.isLoggedIn()" class="navbar-link">Se connecter</a>
+    <a [routerLink]="'/signin'" *ngIf="!usersService.isLoggedIn()" class="navbar-link">S'inscrire</a>
+    <a  *ngIf="usersService.isLoggedIn()" (click)="usersService.logout()" class="navbar-link">Se déconnecter</a>
+  </div>
+</nav>
+<router-outlet></router-outlet>

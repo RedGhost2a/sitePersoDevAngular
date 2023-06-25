@@ -1,21 +1,43 @@
-<h2>Chat Messages</h2>
-
 <div class="chat-container">
-  <div *ngFor="let message of messages" class="message">{{ message }}</div>
-</div>
+  <aside class="element-left" [formGroup]="messageForm" (submit)="sendMessage()">
+    <input class="search-input" type="text" placeholder="Search contacts...">
+    <div class="contact-message" (click)="selectUser(user._id)" *ngFor="let user of users" [class.active]="activeUser === user" >
+      <img src="assets/avatar/deadpool.png" alt="User Image" class="user-image">
+      <p class="user"  >{{ user.username }}</p>
+    </div>
+  </aside>
 
-<form [formGroup]="messageForm" (submit)="sendMessage()">
-  <div>
-    <label for="sender">Sender:</label>
-    <input type="text" id="sender" formControlName="sender" required>
-  </div>
-  <div>
-    <label for="recipient">Recipient:</label>
-    <input type="text" id="recipient" formControlName="recipient" required>
-  </div>
-  <div>
-    <label for="message">Message:</label>
-    <input type="text" id="message" formControlName="message" required>
-  </div>
-  <button type="submit">Send</button>
+  <main class="element-right">
+    <div class="user-info">
+      <div class="user-contact">
+        <p>Email: {{ this.userById.email }}</p>
+        <p>Site web: {{ this.userById.webSite }}</p>
+      </div>
+      <div class="user-details">
+<!--        <p>{{ this.userById.username }}</p>-->
+<!--        <p>{{ this.userById.nickname }}</p>-->
+        <img [src]="this.userById.avatar || 'assets/avatar/deadpool.png'" alt="User Image" class="user-image">
+      </div>
+
+      <div class="user-address">
+        <p>{{ this.userById.address.city }}-{{ this.userById.address.country }}</p>
+      </div>
+    </div>
+
+    <div class="message-container" appScrollToBottom>
+      <div *ngFor="let message of messages" class="message" [ngClass]="{ 'sent': message.sender === userId, 'received': message.sender !== userId }">
+        <div>
+          <div class="message-content">{{ message.message }}</div>
+          <time class="timestamp">{{ message.timestamp | date:'short' }}</time>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</div>
+<form [formGroup]="messageForm" (submit)="sendMessage()" class="message-form">
+
+    <input class="input" placeholder="Message" type="text" id="message" formControlName="message" required>
+
+  <button class="button" type="submit">Envoyer</button>
 </form>
